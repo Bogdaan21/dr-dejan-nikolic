@@ -1,0 +1,288 @@
+/* The original theme styles are served from public/css to keep the migration
+   pixel-compatible while the legacy theme is progressively componentized. */
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  --clinic-accent: #B08A5B;
+  --clinic-accent-dark: #8C6C43;
+  --clinic-ink: #17213A;
+  --clinic-cream: #F6F1EA;
+  --clinic-paper: #FBF8F3;
+}
+
+.brand_mark {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.aali_tm_header.animate .brand_mark,
+.aali_tm_mobile_menu .brand_mark {
+  color: var(--clinic-ink);
+}
+
+body.dark .aali_tm_header.animate .brand_mark {
+  color: #fff;
+}
+
+.clinic_abstract .main {
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255,255,255,.72), transparent 22%),
+    linear-gradient(145deg, #e8dac6, #B08A5B) !important;
+}
+
+.clinic_abstract_two .main {
+  background:
+    radial-gradient(circle at 62% 38%, rgba(255,255,255,.54), transparent 18%),
+    linear-gradient(145deg, #dccbb2, #8C6C43) !important;
+}
+
+.aali_tm_all_wrap[data-color="crimson"] .aali_tm_skills {
+  padding: 145px 0;
+  background-color: var(--clinic-accent-dark) !important;
+}
+
+.clinic_portfolio_section {
+  padding: 145px 0 120px;
+  background-color: var(--clinic-accent-dark);
+}
+
+.consultation_steps .number {
+  font-size: 18px !important;
+  letter-spacing: .08em;
+}
+
+.aali_tm_service {
+  padding: 150px 0;
+  background: var(--clinic-paper);
+}
+
+.aali_tm_service .service_list ul li .list_inner {
+  box-shadow: 13px 13px 70px rgba(23, 33, 58, .08);
+}
+
+.aali_tm_service .service_list .price {
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.aali_tm_service .service_list .price span {
+  color: var(--clinic-accent);
+}
+
+.aali_tm_service .service_list ul li.treatment_cta .list_inner {
+  min-height: 100%;
+  padding: 60px !important;
+  background: rgba(176, 138, 91, .08) !important;
+}
+
+.aali_tm_service .service_list .treatment_cta .wrapper {
+  position: static;
+  transform: none;
+}
+
+.aali_tm_modalbox .service_popup_informations .descriptions p {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.aali_tm_all_wrap[data-color="crimson"] .clinic_principles {
+  justify-content: center;
+  padding: 145px 30px;
+  background-color: var(--clinic-ink) !important;
+}
+
+.clinic_principles .right {
+  width: 100%;
+  max-width: 1020px;
+}
+
+.clinic_principles .right .right_in {
+  max-width: 900px;
+}
+
+.clinic_principles .quote {
+  border-color: rgba(255,255,255,.3);
+}
+
+.aali_tm_contact {
+  background: var(--clinic-cream);
+}
+
+.aali_tm_contact .left ul li {
+  width: 50%;
+  min-height: 86px;
+  padding-right: 18px;
+}
+
+.aali_tm_contact .left ul li h3 {
+  font-size: 22px;
+}
+
+.aali_tm_contact .left .text p,
+.aali_tm_contact .aali_tm_main_title p {
+  color: #625d59;
+}
+
+.aali_tm_all_wrap[data-color="crimson"] .aali_tm_contact .left ul li h3,
+.aali_tm_all_wrap[data-color="crimson"] .aali_tm_contact .left ul li a {
+  color: var(--clinic-accent-dark);
+}
+
+.aali_tm_contact .right .input_list ul li input,
+.aali_tm_contact .message_area textarea {
+  color: var(--clinic-ink);
+  border: 1px solid rgba(23, 33, 58, .06);
+}
+
+.aali_tm_contact input::placeholder,
+.aali_tm_contact textarea::placeholder {
+  color: #77716d;
+  opacity: 1;
+}
+
+.medical_note {
+  clear: both;
+  padding-top: 55px;
+  color: #77716e;
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.brand_mark_footer {
+  color: #fff;
+  font-size: 24px;
+}
+
+.aali_tm_copyright {
+  background-color: var(--clinic-ink);
+}
+
+.aali_tm_all_wrap[data-color="crimson"] .aali_tm_button.border a:hover .svg,
+.aali_tm_all_wrap[data-color="crimson"] .aali_tm_copyright .social ul li a:hover {
+  color: #fff;
+}
+
+body.dark .aali_tm_service,
+body.dark .aali_tm_contact {
+  background: #111A2E;
+}
+
+body.dark .aali_tm_service .service_list ul li .list_inner {
+  background-color: #1C2844;
+}
+
+body.dark .medical_note {
+  color: #aaa;
+}
+
+body.dark .aali_tm_contact .left .text p,
+body.dark .aali_tm_contact .aali_tm_main_title p {
+  color: #c4c1bf;
+}
+
+@media (max-width: 1040px) {
+  .clinic_principles .quote { right: 25px; }
+}
+
+@media (max-width: 768px) {
+  .brand_mark { font-size: 14px; letter-spacing: .08em; }
+  .aali_tm_skills { padding: 110px 0; }
+  .aali_tm_service { padding: 110px 0; }
+  .clinic_portfolio_section { padding: 110px 0; }
+  .aali_tm_service .service_list ul li.treatment_cta .list_inner { padding: 45px 30px !important; }
+  .clinic_principles { padding: 110px 20px; }
+  .clinic_principles .quote { display: none; }
+  .clinic_principles ul li .text p { font-size: 23px; }
+  .aali_tm_contact .left ul li { width: 100%; min-height: 0; padding-right: 0; }
+  .brand_mark_footer { font-size: 18px; }
+}
+
+.migration-noscript {
+  position: fixed;
+  inset: auto 1rem 1rem;
+  z-index: 99999;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background: #b91c1c;
+  border-radius: 0.5rem;
+  font: 600 14px/1.4 system-ui, sans-serif;
+  text-align: center;
+}
+
+/* Paleta: zlatni blok iza doktora ide do dna hero sekcije,
+   da se tamnoplava odjeća ne stapa sa tamnoplavom pozadinom */
+.aali_tm_hero .avatar .one {
+  bottom: 0 !important;
+}
+
+/* Okvir u sekciji Konsultacija spušten niže da ne prelazi preko teksta */
+.aali_tm_section .aali_tm_skills .border {
+  bottom: -330px;
+}
+
+/* Okvir u futeru */
+.aali_tm_section .aali_tm_copyright .border {
+  width: 370px;
+}
+
+/* Potpis izrade u futeru */
+.aali_tm_copyright .bottom .left p .made_by {
+  color: var(--clinic-accent);
+  text-decoration: none;
+  transition: color .3s ease;
+}
+
+.aali_tm_copyright .bottom .left p .made_by:hover {
+  color: #fff;
+}
+
+/* Hero: manji fontovi, naslov "dr Dejan Nikolić" u jednom redu */
+.aali_tm_all_wrap .aali_tm_hero .content .hello {
+  font-size: clamp(16px, 1.4vw, 20px);
+}
+
+.aali_tm_all_wrap .aali_tm_hero .content .name {
+  font-size: clamp(40px, 4.6vw, 76px);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.aali_tm_all_wrap .aali_tm_hero .content .cd-headline {
+  font-size: clamp(18px, 1.9vw, 28px);
+}
+
+.aali_tm_all_wrap .aali_tm_hero .content .cd-headline b {
+  font-size: clamp(26px, 3.1vw, 48px);
+}
+
+@media (max-width: 480px) {
+  .aali_tm_all_wrap .aali_tm_hero .content .name { white-space: normal; }
+}
+
+/* WhatsApp i Viber ikonice u futeru (pored Instagrama) */
+.aali_tm_copyright .social ul li a .svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+/* Kontakt lista: brend ikonice malo manje od okvira od 50px */
+.aali_tm_contact .left ul li .svg[src*="social/"],
+.aali_tm_contact .left ul li svg.svg {
+  padding: 6px;
+}
