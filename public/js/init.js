@@ -27,6 +27,7 @@ jQuery(document).ready(function(){
 	aali_tm_jarallax();
 	aali_tm_testimonial_arrow();
 	aali_tm_owl_carousel();
+	aali_tm_antiage_slider();
 	aali_tm_about_animation();
 	aali_tm_moving_animation();
 	aali_tm_down();
@@ -605,6 +606,66 @@ function aali_tm_owl_carousel(){
 	});
 
 	aali_tm_imgtosvg();
+}
+
+// -----------------------------------------------------
+// --------------    ANTI-AGE SLIDER    ----------------
+// -----------------------------------------------------
+
+function aali_tm_antiage_slider(){
+
+	"use strict";
+
+	var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	jQuery('.antiage_slider_shell').each(function(){
+		var shell = jQuery(this);
+		var carousel = shell.find('.antiage_carousel');
+		var total = carousel.children('.item').length;
+
+		if(!carousel.length || carousel.hasClass('owl-loaded')){
+			return;
+		}
+
+		function updateCounter(event){
+			var current = 0;
+			if(event && event.relatedTarget && event.item){
+				current = event.relatedTarget.relative(event.item.index) + 1;
+			}
+			if(current < 1){
+				current = 1;
+			}
+			shell.find('.antiage_current').text(('0' + current).slice(-2));
+			shell.find('.antiage_total').text('/ ' + ('0' + total).slice(-2));
+		}
+
+		carousel.on('initialized.owl.carousel changed.owl.carousel', updateCounter);
+
+		carousel.owlCarousel({
+			loop: true,
+			animateOut: reducedMotion ? false : 'fadeOut',
+			animateIn: reducedMotion ? false : 'fadeIn',
+			items: 1,
+			autoplay: !reducedMotion,
+			autoplayTimeout: 6500,
+			autoplayHoverPause: true,
+			smartSpeed: reducedMotion ? 0 : 900,
+			autoHeight: true,
+			margin: 0,
+			dots: true,
+			nav: false,
+			mouseDrag: true,
+			touchDrag: true
+		});
+
+		shell.find('.antiage_next').on('click', function(){
+			carousel.trigger('next.owl.carousel');
+		});
+
+		shell.find('.antiage_prev').on('click', function(){
+			carousel.trigger('prev.owl.carousel');
+		});
+	});
 }
 
 // -----------------------------------------------------

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Dr Dejan Nikolić</title>
+  <desc id="desc">Monogram DN za ordinaciju estetske medicine</desc>
+  <rect width="64" height="64" rx="18" fill="#B08A5B"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#F6F1EA" stroke-width="1.5" opacity=".72"/>
+  <text x="31" y="42" fill="#fff" font-family="Georgia, 'Times New Roman', serif" font-size="29" font-style="italic" text-anchor="middle" letter-spacing="-3">DN</text>
+  <path d="M46 13v9M41.5 17.5h9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+</svg>
