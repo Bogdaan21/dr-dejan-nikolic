@@ -3543,3 +3543,24 @@ body #preloader.preloaded {
 .aali_tm_mobile_menu .dropdown .dropdown_inner .anchor_nav li + li {
   border-top: 1px solid rgba(23, 33, 58, .07);
 }
+
+/* Hero slogani: ista 3D animacija i u Safariju na iPhoneu */
+.aali_tm_hero .cd-headline.rotate-1 .cd-words-wrapper {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.aali_tm_hero .cd-headline.rotate-1 b {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Hero na desktopu: tekst i dugmad u donjem lijevom uglu */
+@media (min-width: 769px) {
+  .aali_tm_all_wrap .aali_tm_hero .content {
+    top: auto;
+    bottom: clamp(56px, 9vh, 110px);
+    transform: none;
+  }
+}

@@ -1,6 +1,6 @@
 import { contact, logos } from "@/data/site";
 import { getContent, type Locale } from "@/data/i18n";
-import { seo, siteName, siteUrl } from "@/data/seo";
+import { nameVariants, seo, siteName, siteUrl } from "@/data/seo";
 
 /**
  * Strukturirani podaci (schema.org) za Google: ordinacija/ljekar, sajt, stranica
@@ -11,6 +11,11 @@ export default function JsonLd({ locale }: { locale: Locale }) {
   const content = getContent(locale);
   const pageUrl = `${siteUrl}${s.path}`;
   const practiceId = `${siteUrl}/#practice`;
+  const doctorId = `${siteUrl}/#doctor`;
+  const services = [
+    ...content.treatments.items.map((item) => ({ name: item.name, description: item.summary })),
+    ...s.extraServices,
+  ];
 
   const data = {
     "@context": "https://schema.org",
@@ -19,6 +24,7 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         "@type": "Physician",
         "@id": practiceId,
         name: siteName,
+        alternateName: nameVariants.filter((name) => name !== siteName),
         description: s.description,
         url: siteUrl,
         image: `${siteUrl}${seo.me.ogImage}`,
@@ -35,11 +41,13 @@ export default function JsonLd({ locale }: { locale: Locale }) {
           { "@type": "Country", name: locale === "en" ? "Montenegro" : "Crna Gora" },
         ],
         sameAs: [contact.instagramHref],
-        availableService: content.treatments.items.map((item) => ({
+        availableService: services.map((service) => ({
           "@type": "MedicalProcedure",
-          name: item.name,
-          description: item.summary,
+          name: service.name,
+          description: service.description,
         })),
+        knowsAbout: services.map((service) => service.name),
+        employee: { "@id": doctorId },
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+38269222795",
@@ -47,6 +55,20 @@ export default function JsonLd({ locale }: { locale: Locale }) {
           contactType: locale === "en" ? "appointments" : "zakazivanje",
           availableLanguage: ["sr", "en"],
         },
+      },
+      {
+        "@type": "Person",
+        "@id": doctorId,
+        name: "Dejan Nikolić",
+        honorificPrefix: "Dr",
+        alternateName: nameVariants,
+        jobTitle: s.jobTitle,
+        image: `${siteUrl}/img/about/dr-nikolic-03_tretman_doktor.jpg`,
+        url: pageUrl,
+        sameAs: [contact.instagramHref],
+        worksFor: { "@id": practiceId },
+        knowsAbout: services.map((service) => service.name),
+        address: { "@type": "PostalAddress", addressLocality: "Nikšić", addressCountry: "ME" },
       },
       {
         "@type": "WebSite",
@@ -64,7 +86,7 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         description: s.description,
         inLanguage: s.htmlLang,
         isPartOf: { "@id": `${siteUrl}/#website` },
-        about: { "@id": practiceId },
+        about: [{ "@id": practiceId }, { "@id": doctorId }],
         primaryImageOfPage: `${siteUrl}${s.ogImage}`,
       },
       {

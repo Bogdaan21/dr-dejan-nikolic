@@ -10,6 +10,7 @@ export function pageMetadata(locale: Locale): Metadata {
   return {
     title: { absolute: s.title },
     description: s.description,
+    keywords: s.keywords,
     alternates: { canonical: s.path, languages: languageAlternates },
     openGraph: {
       type: "website",
