@@ -1,5 +1,6 @@
 import { contact, external } from "@/data/site";
 import { getContent, type Locale } from "@/data/i18n";
+import CallButton from "../ui/CallButton";
 
 const mouseIconStyle = { fill: "none", stroke: "#fff", strokeWidth: "20px" };
 
@@ -44,6 +45,7 @@ export default function Hero({ locale }: { locale: Locale }) {
                     </span>
                   </a>
                 </div>
+                <CallButton locale={locale} className="call_btn_light" />
               </div>
             </div>
           </div>

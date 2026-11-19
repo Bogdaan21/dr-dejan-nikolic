@@ -1,5 +1,6 @@
 import { contact, external, pad2, wowDelay } from "@/data/site";
 import { getContent, type Locale } from "@/data/i18n";
+import CallButton from "../ui/CallButton";
 import GuideSection from "../ui/GuideSection";
 
 export default function MimicWrinkles({ locale }: { locale: Locale }) {
@@ -37,9 +38,12 @@ export default function MimicWrinkles({ locale }: { locale: Locale }) {
             <span className="collagen_rule"></span>
             <p>{t.panelText}</p>
           </div>
-          <a className="mimic_panel_link" href={contact.whatsappHref} {...external}>
-            {common.book}
-          </a>
+          <div className="mimic_panel_actions">
+            <a className="mimic_panel_link" href={contact.whatsappHref} {...external}>
+              {common.book}
+            </a>
+            <CallButton locale={locale} className="call_btn_dark" />
+          </div>
         </aside>
       </div>
     </GuideSection>

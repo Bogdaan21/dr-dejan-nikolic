@@ -1,4 +1,4 @@
-import type { SiteVariant } from "@/data/site";
+import { logos, type SiteVariant } from "@/data/site";
 import type { Locale } from "@/data/i18n";
 import LanguageProvider from "./i18n/LanguageProvider";
 import Footer from "./layout/Footer";
@@ -34,6 +34,13 @@ export default function SitePage({ variant = "light", locale = "me" }: SitePageP
     <LanguageProvider locale={locale} montenegrinHref="/me">
       <main>
         <div id="preloader">
+          <img
+            className="preloader_logo"
+            src={logos.horizontal.dark}
+            width={logos.horizontal.width}
+            height={logos.horizontal.height}
+            alt={logos.alt}
+          />
           <div className="loader_line"></div>
         </div>
         <div className="aali_tm_all_wrap" data-magic-cursor="show" data-color="crimson">

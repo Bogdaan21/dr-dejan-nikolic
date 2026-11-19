@@ -1,5 +1,6 @@
 import { contact, external } from "@/data/site";
 import { getContent, type Locale } from "@/data/i18n";
+import CallButton from "./CallButton";
 
 type ConsultationBannerProps = {
   title: string;
@@ -28,9 +29,12 @@ export default function ConsultationBanner({ title, emphasis, text, modifier, lo
         </h4>
         <p>{text}</p>
       </div>
-      <a className="decade_outro_link" href={contact.whatsappHref} {...external}>
-        {common.book}
-      </a>
+      <div className="decade_outro_actions">
+        <a className="decade_outro_link" href={contact.whatsappHref} {...external}>
+          {common.book}
+        </a>
+        <CallButton locale={locale} className="call_btn_light" />
+      </div>
     </div>
   );
 }

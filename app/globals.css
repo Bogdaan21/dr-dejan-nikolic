@@ -3159,3 +3159,178 @@ body:not(.dark) .aali_tm_contact {
     overflow-wrap: anywhere;
   }
 }
+
+/* ---------- Dugme za poziv (pored dugmeta za konsultaciju) ---------- */
+.call_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px 14px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+}
+
+.call_btn .call_btn_icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+/* na tamnoj pozadini */
+.call_btn.call_btn_light {
+  border-color: rgba(255, 255, 255, .45);
+  color: #fff;
+}
+
+.call_btn.call_btn_light:hover,
+.call_btn.call_btn_light:focus-visible {
+  border-color: #fff;
+  background: #fff;
+  color: var(--clinic-ink);
+  outline: none;
+}
+
+/* na svijetloj pozadini */
+.call_btn.call_btn_dark {
+  border-color: rgba(23, 33, 58, .35);
+  color: var(--clinic-ink);
+}
+
+.call_btn.call_btn_dark:hover,
+.call_btn.call_btn_dark:focus-visible {
+  border-color: var(--clinic-ink);
+  background: var(--clinic-ink);
+  color: #fff;
+  outline: none;
+}
+
+/* Hero: dugmad u istom redu */
+.aali_tm_hero .hero_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.aali_tm_hero .hero_buttons .call_btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+/* Traka na dnu vodiča i panel mimičnih bora: dva dugmeta */
+.decade_outro_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mimic_panel_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* FAQ: isti izgled kao ostala dugmad u kartici */
+.faq_actions .call_btn.faq_call {
+  padding: 15px 22px 13px;
+  border-color: rgba(255, 255, 255, .25);
+  color: #fff;
+}
+
+.faq_actions .call_btn.faq_call:hover,
+.faq_actions .call_btn.faq_call:focus-visible {
+  border-color: var(--clinic-accent);
+  background: var(--clinic-accent);
+  color: var(--clinic-ink);
+}
+
+@media (max-width: 768px) {
+  .aali_tm_hero .hero_buttons .call_btn {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .mimic_panel_actions > a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+
+/* ---------- Konsultacija: dugmad za WhatsApp i poziv ---------- */
+.consultation_actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  clear: both;
+  margin-top: 34px;
+}
+
+.consultation_actions .consultation_whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 26px 14px;
+  border: 1px solid var(--clinic-accent);
+  border-radius: 999px;
+  background: var(--clinic-accent);
+  color: var(--clinic-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+}
+
+.consultation_actions .consultation_whatsapp:hover,
+.consultation_actions .consultation_whatsapp:focus-visible {
+  border-color: #fff;
+  background: #fff;
+  color: var(--clinic-ink);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .consultation_actions > a {
+    flex: 1 1 100%;
+  }
+}
+
+/* ---------- Loading: logo iznad animirane linije ---------- */
+#preloader {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+#preloader .preloader_logo {
+  display: block;
+  width: min(260px, 64vw);
+  height: auto;
+  transition: opacity .2s ease;
+}
+
+body #preloader .loader_line {
+  margin: 0;
+  height: 90px;
+}
+
+#preloader.preloaded .preloader_logo {
+  opacity: 0;
+}

@@ -101,7 +101,7 @@ export const localizedContent = {
     },
     contact: { kicker: "Zakazivanje", title: "Pošaljite poruku", text: "Konsultacije i tretmani u Nikšiću. Zakazivanje putem poruke ili telefonskog poziva.", intro: "Za termin ili dodatne informacije javite se putem WhatsAppa, Vibera, Instagrama, emaila ili kontakt forme.", phone: "Telefon", sendMessage: "Pošaljite poruku", openViber: "Otvorite Viber", name: "Ime i prezime *", phonePlaceholder: "Broj telefona *", email: "Email (opciono)", message: "Koji tretman vas interesuje? *", submit: "Pošaljite upit", required: "Molimo popunite ime, broj telefona i poruku.", sending: "Šaljemo poruku…", success: "Poruka je poslata. Javićemo vam se uskoro.", fallback: "Email forma još nije aktivirana. Otvaramo WhatsApp sa pripremljenom porukom.", error: "Poruku trenutno nije moguće poslati. Pokušajte putem WhatsAppa.", note: "Informacije na sajtu su edukativnog karaktera. Prikladnost tretmana i očekivani rezultat procjenjuju se individualno na konsultaciji.", whatsappIntro: "Zdravo, želim da se raspitam o tretmanu.", inquiry: "Upit" },
     footer: { follow: "Pratite", rights: "Sva prava zadržana. Izrada:", call: "Pozovite", top: "Na vrh" },
-    common: { book: "Zakažite konsultaciju", antiAge: "Anti-age medicina" },
+    common: { book: "Zakažite konsultaciju", call: "Pozovite", whatsapp: "Pišite na WhatsApp", antiAge: "Anti-age medicina" },
   },
   en: {
     navigation: [
@@ -152,7 +152,7 @@ export const localizedContent = {
     ] },
     contact: { kicker: "Appointments", title: "Send a message", text: "Consultations and treatments in Nikšić. Book by message or phone call.", intro: "For an appointment or more information, contact us via WhatsApp, Viber, Instagram, email or the contact form.", phone: "Phone", sendMessage: "Send a message", openViber: "Open Viber", name: "Full name *", phonePlaceholder: "Phone number *", email: "Email (optional)", message: "Which treatment are you interested in? *", submit: "Send enquiry", required: "Please enter your name, phone number and message.", sending: "Sending…", success: "Your message has been sent. We will contact you soon.", fallback: "Email delivery is not active yet. Opening WhatsApp with your prepared message.", error: "The message could not be sent. Please try WhatsApp.", note: "The information on this website is educational. Treatment suitability and expected results are assessed individually during a consultation.", whatsappIntro: "Hello, I would like to ask about a treatment.", inquiry: "Enquiry" },
     footer: { follow: "Follow", rights: "All rights reserved. Created by:", call: "Call", top: "Back to top" },
-    common: { book: "Book a consultation", antiAge: "Anti-age medicine" },
+    common: { book: "Book a consultation", call: "Call", whatsapp: "Message on WhatsApp", antiAge: "Anti-age medicine" },
   },
 } as const;
 

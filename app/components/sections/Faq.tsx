@@ -1,5 +1,6 @@
 import { contact, external, pad2 } from "@/data/site";
 import { getContent, type Locale } from "@/data/i18n";
+import CallButton from "../ui/CallButton";
 
 export default function Faq({ locale }: { locale: Locale }) {
   const t = getContent(locale).faq;
@@ -41,6 +42,7 @@ export default function Faq({ locale }: { locale: Locale }) {
               <a href={contact.instagramHref} {...external}>
                 Instagram
               </a>
+              <CallButton locale={locale} className="faq_call" />
             </div>
           </div>
         </div>
