@@ -27,8 +27,8 @@ export const seo: Record<Locale, {
     ogTitle: "Dr Dejan Nikolić — anti-age medicina u Nikšiću",
     ogDescription:
       "Hijaluronski fileri, botoks, stimulatori kolagena, mezoterapija i lipoliza. Prirodni rezultati, plan prilagođen vama.",
-    ogImage: "/img/og/og-image.jpg",
-    ogImageAlt: "Dr Dejan Nikolić tokom tretmana u ordinaciji u Nikšiću",
+    ogImage: "/img/og/og-logo.jpg",
+    ogImageAlt: "Dr Dejan Nikolić — logo, anti-age medicina",
   },
   en: {
     path: "/en",
@@ -40,8 +40,8 @@ export const seo: Record<Locale, {
     ogTitle: "Dr Dejan Nikolić — anti-age medicine in Nikšić",
     ogDescription:
       "Hyaluronic fillers, botulinum toxin, collagen stimulators, mesotherapy and lipolysis. Natural results, a plan tailored to you.",
-    ogImage: "/img/og/og-image-en.jpg",
-    ogImageAlt: "Dr Dejan Nikolić during a treatment at his practice in Nikšić",
+    ogImage: "/img/og/og-logo.jpg",
+    ogImageAlt: "Dr Dejan Nikolić — logo, anti-age medicine",
   },
 };
 

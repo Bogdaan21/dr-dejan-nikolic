@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   creator: siteName,
   publisher: siteName,
   category: "health",
+  // Google Search Console (isti kod je i u DNS TXT zapisu)
+  verification: { google: "pTrbXU5y7lTHcumZefdsvWBYMWy50F57xEBA2Yviebs" },
   formatDetection: { telephone: true, email: true, address: false },
   robots: {
     index: true,

@@ -3531,3 +3531,15 @@ body #preloader.preloaded {
     bottom: calc(32px + env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* Mobilni meni: veći razmak između stavki navigacije */
+.aali_tm_mobile_menu .dropdown .dropdown_inner .anchor_nav li a {
+  display: block;
+  padding: 12px 0;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.aali_tm_mobile_menu .dropdown .dropdown_inner .anchor_nav li + li {
+  border-top: 1px solid rgba(23, 33, 58, .07);
+}
