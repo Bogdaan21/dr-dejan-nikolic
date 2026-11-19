@@ -84,9 +84,6 @@ export default function Hero({ locale }: { locale: Locale }) {
             </li>
           </ul>
         </div>
-        <div className="hero_mail">
-          <a className="line_anim" href={contact.phoneHref}>{contact.phoneDisplay}</a>
-        </div>
       </div>
     </div>
   );

@@ -3459,7 +3459,7 @@ body #preloader.preloaded {
   }
 
   .aali_tm_hero .hero_buttons {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
   }
@@ -3469,26 +3469,20 @@ body #preloader.preloaded {
     font-size: 14px;
   }
 
-  /* dugme za poziv: samo okrugla ikonica telefona */
+  /* dugme za poziv: slušalica + broj telefona, kao na desktopu */
   .aali_tm_hero .hero_buttons .call_btn {
     flex: 0 0 auto;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    border-radius: 50%;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 14px;
   }
 
-  .aali_tm_hero .hero_buttons .call_btn span {
+  .aali_tm_hero .hero_buttons .call_btn .call_btn_label {
     display: none;
   }
 
-  .aali_tm_hero .hero_buttons .call_btn .call_btn_icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* broj telefona na dnu hera se ne prikazuje (dugme za poziv je pored) */
-  .aali_tm_all_wrap .aali_tm_hero .hero_mail {
+  /* ikonica miša za skrol se ne prikazuje na mobilnom */
+  .aali_tm_all_wrap .aali_tm_hero .hero_center_down {
     display: none;
   }
 
@@ -3496,5 +3490,44 @@ body #preloader.preloaded {
   .aali_tm_all_wrap .aali_tm_hero .hero_video_overlay {
     background:
       linear-gradient(180deg, rgba(12, 20, 38, .22) 0%, rgba(12, 20, 38, 0) 30%, rgba(12, 20, 38, .08) 52%, rgba(12, 20, 38, .72) 78%, rgba(12, 20, 38, .88) 100%);
+  }
+}
+
+/* ---------- O doktoru: fotografija mezoterapije uvećana i centrirana na tretman ---------- */
+.aali_tm_section .aali_tm_about .clinic_doctor_photo_two .main {
+  background-size: 140% auto;
+  background-position: 30% 58%;
+}
+
+/* Hero na mobilnom: dugmad jedno ispod drugog, iste širine */
+@media (max-width: 768px) {
+  .aali_tm_hero .hero_buttons {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 300px;
+  }
+
+  .aali_tm_hero .hero_buttons .aali_tm_button,
+  .aali_tm_hero .hero_buttons .aali_tm_button a,
+  .aali_tm_hero .hero_buttons .call_btn {
+    width: 100%;
+  }
+
+  .aali_tm_hero .hero_buttons .aali_tm_button a {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .aali_tm_hero .hero_buttons .call_btn {
+    min-height: 50px;
+  }
+}
+
+/* Hero na mobilnom: sadržaj pri dnu ekrana (ikonica za skrol je sakrivena) */
+@media (max-width: 768px) {
+  .aali_tm_all_wrap .aali_tm_hero .content {
+    bottom: calc(32px + env(safe-area-inset-bottom, 0px));
   }
 }

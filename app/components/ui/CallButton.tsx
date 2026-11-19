@@ -21,7 +21,10 @@ export default function CallButton({ locale, className }: { locale: Locale; clas
           strokeLinejoin="round"
         />
       </svg>
-      <span>{`${common.call} ${contact.phoneDisplay}`}</span>
+      <span>
+        <span className="call_btn_label">{`${common.call} `}</span>
+        {contact.phoneDisplay}
+      </span>
     </a>
   );
 }
