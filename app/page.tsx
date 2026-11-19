@@ -1,8 +1,6 @@
-import LegacyPage from "./components/LegacyPage";
-import { readLegacyDocument } from "./lib/legacy-document";
+import { redirect } from "next/navigation";
 
+/** Početna adresa vodi na crnogorsku verziju (/me). */
 export default function HomePage() {
-  const document = readLegacyDocument("index.html");
-
-  return <LegacyPage {...document} />;
+  redirect("/me");
 }

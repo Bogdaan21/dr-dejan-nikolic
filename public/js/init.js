@@ -35,13 +35,9 @@ jQuery(document).ready(function(){
 	
 	// Next.js loads this runtime after hydration, so the native load event may
 	// already have fired by the time the legacy theme starts.
-	if(document.readyState === 'complete'){
-		aali_tm_my_load();
-	}else{
-		jQuery(window).on('load', function(){
-			aali_tm_my_load();
-		});
-	}
+	// Uvod se skida čim se skripte pokrenu; ne čeka da se učitaju sve slike
+	// i video (window load), jer je to bilo glavno kašnjenje pri otvaranju.
+	aali_tm_my_load();
 	jQuery(window).on('resize', function(){
 		aali_tm_resume_image_width();
 	});
@@ -122,7 +118,7 @@ function aali_tm_trigger_menu(){
 
 	var hamburger 		= jQuery('.aali_tm_mobile_menu .trigger .hamburger');
 	var mobileMenu		= jQuery('.aali_tm_mobile_menu .dropdown');
-	var mobileMenuList	= jQuery('.aali_tm_mobile_menu .dropdown .dropdown_inner ul li a');
+	var mobileMenuList	= jQuery('.aali_tm_mobile_menu .dropdown .dropdown_inner .anchor_nav li a');
 
 	hamburger.on('click',function(){
 		var element 	= jQuery(this);
@@ -297,20 +293,15 @@ function aali_tm_preloader(){
 	
 	"use strict";
 	
-	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
 	
-	if (!isMobile) {
-		setTimeout(function() {
-			preloader.addClass('preloaded');
-		}, 800);
-		setTimeout(function() {
-			preloader.remove();
-		}, 2000);
-
-	} else {
+	// Ista kratka animacija na desktopu i mobilnom
+	setTimeout(function() {
+		preloader.addClass('preloaded');
+	}, 100);
+	setTimeout(function() {
 		preloader.remove();
-	}
+	}, 500);
 }
 
 // -----------------------------------------------------
@@ -321,7 +312,7 @@ function aali_tm_my_load(){
 	
 	"use strict";
 	
-	var speed	= 500;
+	var speed	= 0;
 	setTimeout(function(){aali_tm_preloader();},speed);
 }
 

@@ -1,12 +1,6 @@
-import LegacyPage from "../components/LegacyPage";
-import { readLegacyDocument } from "../lib/legacy-document";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = {
-  title: "Dr Dejan Nikolić | Estetska medicina",
-};
-
+/** Stara adresa crnogorske verzije — sada je na /me. */
 export default function DarkPage() {
-  const document = readLegacyDocument("index-dark.html");
-
-  return <LegacyPage {...document} />;
+  permanentRedirect("/me");
 }

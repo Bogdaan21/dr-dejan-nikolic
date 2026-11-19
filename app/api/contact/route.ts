@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
+  const to = process.env.CONTACT_TO_EMAIL || "dejonikolic995@gmail.com";
   const from = process.env.CONTACT_FROM_EMAIL ?? "Dr Dejan Nikolić <onboarding@resend.dev>";
 
   if (!apiKey || !to) {

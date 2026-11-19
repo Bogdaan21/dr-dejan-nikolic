@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Dr Dejan Nikolić | Estetska medicina u Nikšiću",
   description:
     "Dr Dejan Nikolić — hijaluronski fileri, botoks, stimulatori kolagena, mezoterapija i lipoliza u Nikšiću.",
+  alternates: { languages: { "sr-ME": "/me", en: "/en" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

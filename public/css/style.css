@@ -293,9 +293,9 @@ h6 {
 }
 .preloaded:before,
 .preloaded:after {
-  -webkit-animation: preloadedzero 300ms ease-in-out 500ms forwards;
-  -o-animation: preloadedzero 300ms ease-in-out 500ms forwards;
-  animation: preloadedzero 300ms ease-in-out 500ms forwards;
+  -webkit-animation: preloadedzero 250ms ease-in-out 100ms forwards;
+  -o-animation: preloadedzero 250ms ease-in-out 100ms forwards;
+  animation: preloadedzero 250ms ease-in-out 100ms forwards;
 }
 @keyframes preloadedzero {
   0% {
