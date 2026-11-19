@@ -295,13 +295,25 @@ function aali_tm_preloader(){
 	
 	var preloader = $('#preloader');
 	
-	// Ista kratka animacija na desktopu i mobilnom
-	setTimeout(function() {
-		preloader.addClass('preloaded');
-	}, 100);
-	setTimeout(function() {
-		preloader.remove();
-	}, 500);
+	// Uvod ostaje dok se logo do kraja ne "učita" (CSS animacija), kratko zastane,
+	// pa se pretopi u stranicu (0,5 s) i uklanja. Najduže čeka 2,5 s.
+	var done = false;
+	function finish(){
+		if (done) { return; }
+		done = true;
+		setTimeout(function() {
+			preloader.addClass('preloaded');
+			setTimeout(function() { preloader.remove(); }, 550);
+		}, 150);
+	}
+	var fill = document.querySelector('#preloader .preloader_logo_fill');
+	var animations = (fill && fill.getAnimations) ? fill.getAnimations() : [];
+	if (animations.length && window.Promise) {
+		Promise.all(animations.map(function(a){ return a.finished; })).then(finish, finish);
+	} else {
+		setTimeout(finish, 900);
+	}
+	setTimeout(finish, 2500);
 }
 
 // -----------------------------------------------------

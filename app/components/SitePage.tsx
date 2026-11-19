@@ -33,15 +33,28 @@ export default function SitePage({ variant = "light", locale = "me" }: SitePageP
   return (
     <LanguageProvider locale={locale} montenegrinHref="/me">
       <main>
+        {/* Uvod: logo se "upisuje" s lijeva na desno, ispod ide linija napretka */}
         <div id="preloader">
-          <img
-            className="preloader_logo"
-            src={logos.horizontal.dark}
-            width={logos.horizontal.width}
-            height={logos.horizontal.height}
-            alt={logos.alt}
-          />
-          <div className="loader_line"></div>
+          <div className="preloader_brand">
+            <img
+              className="preloader_logo preloader_logo_ghost"
+              src={logos.horizontal.dark}
+              width={logos.horizontal.width}
+              height={logos.horizontal.height}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              className="preloader_logo preloader_logo_fill"
+              src={logos.horizontal.dark}
+              width={logos.horizontal.width}
+              height={logos.horizontal.height}
+              alt={logos.alt}
+            />
+          </div>
+          <div className="preloader_bar" aria-hidden="true">
+            <span></span>
+          </div>
         </div>
         <div className="aali_tm_all_wrap" data-magic-cursor="show" data-color="crimson">
           {/* Popup prozor koji skripta šablona puni sadržajem */}

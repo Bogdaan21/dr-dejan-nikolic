@@ -3311,26 +3311,112 @@ body:not(.dark) .aali_tm_contact {
   }
 }
 
-/* ---------- Loading: logo iznad animirane linije ---------- */
-#preloader {
+/* ---------- Loading: logo se učitava ----------
+   1) blijedi logo + puni logo koji se otkriva s lijeva na desno (0,9 s)
+   2) tanka zlatna linija napretka ispod, u istom ritmu
+   3) izlaz: logo se blago podigne i cijeli ekran se pretopi u stranicu */
+body #preloader {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 26px;
+  background: #fff;
+  opacity: 1;
+  transition: opacity .5s cubic-bezier(.4, 0, .2, 1), visibility 0s linear .5s;
+}
+
+/* stara animacija teme (dvije bijele polovine i vertikalna linija) se ne koristi */
+body #preloader::before,
+body #preloader::after,
+body #preloader.preloaded::before,
+body #preloader.preloaded::after {
+  display: none;
+  animation: none;
+}
+
+#preloader .preloader_brand {
+  position: relative;
+  width: min(260px, 64vw);
+  animation: preloader_rise .7s cubic-bezier(.22, 1, .36, 1) both;
 }
 
 #preloader .preloader_logo {
   display: block;
-  width: min(260px, 64vw);
+  width: 100%;
   height: auto;
-  transition: opacity .2s ease;
 }
 
-body #preloader .loader_line {
-  margin: 0;
-  height: 90px;
+#preloader .preloader_logo_ghost {
+  opacity: .14;
+  filter: grayscale(1);
 }
 
-#preloader.preloaded .preloader_logo {
+#preloader .preloader_logo_fill {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 100% 0 0);
+  animation: preloader_reveal .9s cubic-bezier(.65, 0, .35, 1) .15s forwards;
+}
+
+#preloader .preloader_bar {
+  position: relative;
+  width: min(140px, 36vw);
+  height: 1px;
+  overflow: hidden;
+  background: rgba(176, 138, 91, .22);
+  animation: preloader_fade .5s ease both;
+}
+
+#preloader .preloader_bar span {
+  position: absolute;
+  inset: 0;
+  background: var(--clinic-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: preloader_progress .9s cubic-bezier(.65, 0, .35, 1) .15s forwards;
+}
+
+/* izlaz */
+body #preloader.preloaded {
   opacity: 0;
+  visibility: hidden;
+}
+
+#preloader.preloaded .preloader_brand {
+  transform: translateY(-10px) scale(.98);
+  opacity: 0;
+  transition: transform .5s cubic-bezier(.4, 0, .2, 1), opacity .4s ease;
+}
+
+#preloader.preloaded .preloader_bar {
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+@keyframes preloader_rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes preloader_reveal {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes preloader_progress {
+  to { transform: scaleX(1); }
+}
+
+@keyframes preloader_fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader .preloader_brand,
+  #preloader .preloader_logo_fill,
+  #preloader .preloader_bar,
+  #preloader .preloader_bar span {
+    animation-duration: 1ms;
+    animation-delay: 0s;
+  }
 }
