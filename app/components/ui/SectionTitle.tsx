@@ -19,7 +19,7 @@ export default function SectionTitle({ kicker, title, text, align, color, classN
       data-color={color}
     >
       <span>{kicker}</span>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {text ? <p>{text}</p> : null}
     </div>
   );

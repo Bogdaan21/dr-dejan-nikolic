@@ -51,7 +51,7 @@ export default function Treatments({ locale }: { locale: Locale }) {
                         <p>{t.summary}</p>
                       </div>
                       <a className="aali_tm_full_link" href="#" aria-label={t.linkLabel}></a>
-                      <img className="popup_service_image" src={treatment.image} alt={t.imageAlt} />
+                      <img className="popup_service_image" src={treatment.image} alt={t.imageAlt} loading="lazy" decoding="async" />
                       <div className="service_hidden_details">
                         <div className="service_popup_informations">
                           <div className="descriptions">

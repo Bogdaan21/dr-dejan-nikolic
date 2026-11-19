@@ -12,7 +12,7 @@ export default function Faq({ locale }: { locale: Locale }) {
           <div className="faq_layout">
             <div className="faq_intro wow fadeInLeft" data-wow-duration="1s">
               <span className="faq_eyebrow">{t.eyebrow}</span>
-              <h3>{t.title}</h3>
+              <h2>{t.title}</h2>
               <p>{t.text}</p>
             </div>
             <div className="faq_list wow fadeInRight" data-wow-duration="1s">

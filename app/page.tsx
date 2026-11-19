@@ -1,6 +1,6 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
-/** Početna adresa vodi na crnogorsku verziju (/me). */
+/** Početna adresa trajno vodi na crnogorsku verziju (/me), kanonsku adresu sajta. */
 export default function HomePage() {
-  redirect("/me");
+  permanentRedirect("/me");
 }

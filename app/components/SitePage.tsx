@@ -17,6 +17,7 @@ import Portfolio from "./sections/Portfolio";
 import Resume from "./sections/Resume";
 import SkinDecades from "./sections/SkinDecades";
 import Treatments from "./sections/Treatments";
+import JsonLd from "./seo/JsonLd";
 import ThemeRuntime from "./ThemeRuntime";
 
 type SitePageProps = { variant?: SiteVariant; locale?: Locale };
@@ -32,6 +33,7 @@ const showPlaceholderSections = false;
 export default function SitePage({ variant = "light", locale = "me" }: SitePageProps) {
   return (
     <LanguageProvider locale={locale} montenegrinHref="/me">
+      <JsonLd locale={locale} />
       <main>
         {/* Uvod: logo se "upisuje" s lijeva na desno, ispod ide linija napretka */}
         <div id="preloader">

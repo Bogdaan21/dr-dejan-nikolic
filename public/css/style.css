@@ -1022,7 +1022,8 @@ h6 {
 }
 .aali_tm_main_title[data-color="light"] span,
 .aali_tm_main_title[data-color="light"] h3,
-.aali_tm_main_title[data-color="light"] p {
+.aali_tm_main_title[data-color="light"] p,
+.aali_tm_main_title[data-color="light"] h2 {
   color: #fff !important;
 }
 .aali_tm_main_title span {
@@ -1034,7 +1035,8 @@ h6 {
   display: inline-block;
   margin-bottom: 5px;
 }
-.aali_tm_main_title h3 {
+.aali_tm_main_title h3,
+.aali_tm_main_title h2  {
   font-size: 60px;
   font-weight: 700;
   letter-spacing: -0.2px;
@@ -2914,7 +2916,8 @@ input[type="number"] {
   .aali_tm_main_title span {
     font-size: 18px;
   }
-  .aali_tm_main_title h3 {
+  .aali_tm_main_title h3,
+  .aali_tm_main_title h2  {
     font-size: 40px;
   }
   .progress_inner > span {
@@ -3139,7 +3142,8 @@ input[type="number"] {
     width: 100%;
     padding-left: 0px;
   }
-  .aali_tm_main_title h3 {
+  .aali_tm_main_title h3,
+  .aali_tm_main_title h2  {
     font-size: 30px;
   }
   .aali_tm_main_title {

@@ -553,7 +553,7 @@ body.dark .aali_tm_all_wrap[data-color="red"] .aali_tm_header.animate .menu ul l
 .aali_tm_all_wrap[data-color="red"] .aali_tm_resume .icon{background-color: #fe0000;}
 .aali_tm_all_wrap[data-color="red"] .aali_tm_testimonials{background-color: #fe0000;}
 .aali_tm_all_wrap[data-color="red"] .aali_tm_main_title[data-color="light"] span{color: #fe0000;}
-.aali_tm_all_wrap[data-color="red"] .aali_tm_main_title[data-color="light"] h3{color: #fe0000;}
+.aali_tm_all_wrap[data-color="red"] .aali_tm_main_title[data-color="light"] h3,.aali_tm_all_wrap[data-color="red"] .aali_tm_main_title[data-color="light"] h2{color: #fe0000;}
 .aali_tm_all_wrap[data-color="red"] .aali_tm_main_title[data-color="light"] p{color: #fe0000;}
 .aali_tm_all_wrap[data-color="red"] .aali_tm_news .news_list ul li .details .category a{color: #fe0000;}
 .aali_tm_all_wrap[data-color="red"] .aali_tm_news .news_list ul li .details .title a:hover{color: #fe0000;}

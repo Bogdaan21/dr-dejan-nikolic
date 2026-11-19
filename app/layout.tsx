@@ -1,11 +1,26 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { seo, siteName, siteUrl } from "@/data/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dr Dejan Nikolić | Estetska medicina u Nikšiću",
-  description:
-    "Dr Dejan Nikolić — hijaluronski fileri, botoks, stimulatori kolagena, mezoterapija i lipoliza u Nikšiću.",
-  alternates: { languages: { "sr-ME": "/me", en: "/en" } },
+  metadataBase: new URL(siteUrl),
+  title: { default: seo.me.title, template: `%s | ${siteName}` },
+  description: seo.me.description,
+  applicationName: siteName,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
+  category: "health",
+  formatDetection: { telephone: true, email: true, address: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#17213A",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

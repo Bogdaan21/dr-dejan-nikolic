@@ -721,7 +721,9 @@ body.dark .aali_tm_contact .aali_tm_main_title p {
   color: #625d59;
 }
 
-.collagen_guide .antiage_title h3 {
+.collagen_guide .antiage_title h3,
+
+.collagen_guide .antiage_title h2  {
   color: var(--clinic-ink) !important;
 }
 
@@ -1187,7 +1189,9 @@ body.dark .aali_tm_contact .aali_tm_main_title p {
   text-transform: uppercase;
 }
 
-.faq_intro h3 {
+.faq_intro h3,
+
+.faq_intro h2  {
   max-width: 430px;
   margin: 22px 0 0;
   color: var(--clinic-ink) !important;
@@ -1526,7 +1530,8 @@ body.dark .clinic_instagram .ig_item {
   .faq_layout { grid-template-columns: 1fr; gap: 55px; }
   .faq_intro { position: static; }
   .faq_intro h3,
-  .faq_intro p { max-width: 700px; }
+  .faq_intro p,
+  .faq_intro h2 { max-width: 700px; }
   .faq_cta { grid-template-columns: 1fr; align-items: start; }
   .faq_actions { flex-direction: row; min-width: 0; }
   .faq_actions a { min-width: 150px; }
@@ -1591,7 +1596,8 @@ body.dark .clinic_instagram .ig_item {
   .mimic_story_final .collagen_story_content h4 { font-size: clamp(39px, 9.5vw, 48px); }
   .clinic_faq { padding: 100px 0; }
   .faq_layout { gap: 40px; }
-  .faq_intro h3 { margin-top: 15px; font-size: clamp(48px, 13vw, 62px); }
+  .faq_intro h3,
+  .faq_intro h2  { margin-top: 15px; font-size: clamp(48px, 13vw, 62px); }
   .faq_intro p { margin-top: 20px; font-size: 18px; }
   .faq_item summary { grid-template-columns: 1fr; gap: 9px; min-height: 0; padding: 24px 62px 24px 22px; }
   .faq_item summary::after { right: 18px; }
@@ -3418,5 +3424,77 @@ body #preloader.preloaded {
   #preloader .preloader_bar span {
     animation-duration: 1ms;
     animation-delay: 0s;
+  }
+}
+
+/* ---------- Mobilno zaglavlje: logo i hamburger u istoj liniji (vertikalno centrirani) ---------- */
+.aali_tm_mobile_menu .mobile_in .logo,
+.aali_tm_mobile_menu .mobile_in .logo .brand_lockup {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.aali_tm_mobile_menu .mobile_in .trigger {
+  top: 0;
+}
+
+/* ---------- Hero na mobilnom: manje sadržaja, više videa ---------- */
+@media (max-width: 768px) {
+  .aali_tm_all_wrap .aali_tm_hero .content .name {
+    font-size: 44px;
+    line-height: 1.02;
+  }
+
+  /* tekst iznad i ispod imena: isti font i ista veličina */
+  .aali_tm_all_wrap .aali_tm_hero .content .hello,
+  .aali_tm_all_wrap .aali_tm_hero .content .cd-headline,
+  .aali_tm_all_wrap .aali_tm_hero .content .cd-headline .blc,
+  .aali_tm_all_wrap .aali_tm_hero .content .cd-headline b {
+    font-size: 15px;
+  }
+
+  .aali_tm_all_wrap .aali_tm_hero .content .hello {
+    margin: 0 0 8px;
+  }
+
+  .aali_tm_hero .hero_buttons {
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .aali_tm_hero .hero_buttons .aali_tm_button a {
+    padding: 11px 46px 11px 20px;
+    font-size: 14px;
+  }
+
+  /* dugme za poziv: samo okrugla ikonica telefona */
+  .aali_tm_hero .hero_buttons .call_btn {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .aali_tm_hero .hero_buttons .call_btn span {
+    display: none;
+  }
+
+  .aali_tm_hero .hero_buttons .call_btn .call_btn_icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* broj telefona na dnu hera se ne prikazuje (dugme za poziv je pored) */
+  .aali_tm_all_wrap .aali_tm_hero .hero_mail {
+    display: none;
+  }
+
+  /* svjetliji sloj na gornjem dijelu, da se video više vidi */
+  .aali_tm_all_wrap .aali_tm_hero .hero_video_overlay {
+    background:
+      linear-gradient(180deg, rgba(12, 20, 38, .22) 0%, rgba(12, 20, 38, 0) 30%, rgba(12, 20, 38, .08) 52%, rgba(12, 20, 38, .72) 78%, rgba(12, 20, 38, .88) 100%);
   }
 }
